@@ -1,6 +1,6 @@
-# Identifying Plane Groups
+# Plane Group Identifier
 
-A short program for identifying the plane group of a
-two-dimensional pattern.
+A script for identifying the plane group of a
+two-dimensional pattern given user-supplied information.
 
-Usage: run `identifying_plane_groups.py` and follow the prompts.
+Run `plane_group_identifier.py` and follow the prompts.
