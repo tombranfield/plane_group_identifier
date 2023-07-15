@@ -13,7 +13,8 @@ QUIT_STRINGS = ["q", "quit", "exit"]
 
 def get_highest_order_rotation(self):
     """
-    Prompts the user for the highest order of rotation present in the pattern.
+    Prompts the user for the highest order of rotation present in the pattern,]
+    then returns it.
     """
     prompt_message = "What is the highest order of rotation of the pattern?"
     while True:
