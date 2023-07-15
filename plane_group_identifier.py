@@ -1,5 +1,5 @@
 """
-A script that identifies a plane group of a two-dimensional pattern given 
+A script that identifies the plane group of a two-dimensional pattern given 
 user-supplied information.
 
 Adapted from the flow chart in "The Basics of Crystallography and Diffraction",
@@ -9,9 +9,6 @@ Usage: ./identifying_plane_groups.py
 """
 
 import sys
-
-
-QUIT_STRINGS = ["q", "quit", "exit"]
 
 
 def is_valid_order_rotation(num: int) -> bool:
@@ -33,10 +30,22 @@ def get_highest_order_rotation() -> int:
         user_response = input(prompt_message)
         if user_response in QUIT_STRINGS:
             quit_program()
-        if is_valid_order_rotation(input):
-            return user_response
+        try:
+            user_response = int(user_response)
+        except ValueError:
+            print("Invalid input. Please enter 1, 2, 3, 4, or 6.")
         else:
-            print("Invalid input. Please enter None, 2, 3, 4, or 6.")
+            if is_valid_order_rotation(user_response):
+                return user_response
+
+
+def check_if_quit_input(user_input):
+    """
+    Checks if the user wants to quit, and stops the program if they do.
+    """
+    quit_strings = ["q", "quit", "exit"]
+    if user_response in quit_strings:
+        quit_program()
         
 
 def is_reflection_present(str) -> bool:
@@ -57,7 +66,7 @@ def is_reflection_present(str) -> bool:
             print("Invalid input.")
 
 
-def quit_program(self):
+def quit_program():
     """
     Prints a message that the program is stopping, then stops the
     program.
@@ -68,8 +77,9 @@ def quit_program(self):
 
 def main():
     """Main program."""
-    highest_order_of_rotation = get_highest_order_of_rotation()
+    highest_order_of_rotation = get_highest_order_rotation()
     reflection_present = is_reflection_present()
+    print(highest_order_of_rotation, reflection_present)
 
 
 if __name__ == "__main__":
