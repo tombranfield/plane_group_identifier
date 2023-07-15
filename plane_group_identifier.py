@@ -25,21 +25,31 @@ def get_highest_order_rotation() -> int:
     Prompts the user for the highest order of rotation present in the pattern,]
     then returns it.
     """
-    prompt_message = "What is the highest order of rotation of the pattern?"
+    prompt_message = "What is the highest order of rotation of the pattern? "
     while True:
         user_response = input(prompt_message)
-        if user_response in QUIT_STRINGS:
-            quit_program()
-        try:
-            user_response = int(user_response)
-        except ValueError:
-            print("Invalid input. Please enter 1, 2, 3, 4, or 6.")
+        check_if_quit_input(user_response)
         else:
             if is_valid_order_rotation(user_response):
                 return user_response
+            else:
+                print("Only values 1, 2, 3, 4, and 6 are allowed.")
 
 
-def check_if_quit_input(user_input):
+def check_if_input_is_int(input: str) -> bool:
+    """
+    Checks if a user-given input string is an integer.
+    """
+    try:
+        user_response = int(user_response)
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
+        return False
+    else:
+        return True    
+
+
+def check_if_quit_input(user_response):
     """
     Checks if the user wants to quit, and stops the program if they do.
     """
@@ -53,12 +63,11 @@ def is_reflection_present(str) -> bool:
     Prompts the user whether reflection is present in the pattern then returns
     the corresponding bool.
     """
-    prompt_message = "Is reflection present? (Y/n)"
+    prompt_message = "Is reflection present? (Y/n) "
     while True:
         user_response = input(prompt_message).lower()
-        if user_response in QUIT_STRINGS:
-            quit_program()
-        elif user_response in ["y", "yes"]:
+        check_if_quit_input(user_response)
+        if user_response in ["y", "yes"]:
             return True
         elif user_response in ["n", "no"]:
             return False
@@ -78,8 +87,8 @@ def quit_program():
 def main():
     """Main program."""
     highest_order_of_rotation = get_highest_order_rotation()
-    reflection_present = is_reflection_present()
-    print(highest_order_of_rotation, reflection_present)
+#    reflection_present = is_reflection_present()
+#    print(highest_order_of_rotation, reflection_present)
 
 
 if __name__ == "__main__":
