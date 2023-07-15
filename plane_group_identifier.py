@@ -15,6 +15,7 @@ def is_valid_order_rotation(num: int) -> bool:
     """
     Tests whether a given input string is a valid order of rotation.
     """
+    # Note this holds for plane groups. Quasicrystals not considered.
     if num in [1, 2, 3, 4, 6]:
         return True
     return False
@@ -22,15 +23,18 @@ def is_valid_order_rotation(num: int) -> bool:
 
 def get_highest_order_rotation() -> int:
     """
-    Prompts the user for the highest order of rotation present in the pattern,]
+    Prompts the user for the highest order of rotation present in the pattern,
     then returns it.
     """
     prompt_message = "What is the highest order of rotation of the pattern? "
     while True:
         user_response = input(prompt_message)
         check_if_quit_input(user_response)
-        if is_input_int(user_response):
+        try:
             user_response = int(user_response)
+        except ValueError:
+            print("You must enter an integer 1, 2, 3, 4, or 6.")
+        else:
             if is_valid_order_rotation(user_response):
                 return user_response
             else:
