@@ -1,6 +1,9 @@
 """
-Identifies a plane group of a two-dimensional pattern given user-supplied
-information.
+A script that identifies a plane group of a two-dimensional pattern given 
+user-supplied information.
+
+Adapted from the flow chart in "The Basics of Crystallography and Diffraction",
+chapter 2.
 
 Usage: ./identifying_plane_groups.py
 """
@@ -11,13 +14,13 @@ import sys
 QUIT_STRINGS = ["q", "quit", "exit"]
 
 
-def is_valid_order_rotation(str) -> bool:
+def is_valid_order_rotation(num: int) -> bool:
     """
     Tests whether a given input string is a valid order of rotation.
     """
     # Note "none" is a user-supplied answer to whether the pattern has
     # rotational symmetry or not. It is not to do with NoneType.
-    if str.lower() == in ["none", 1, 2, 3, 4, 6]:
+    if num in [1, 2, 3, 4, 6]:
         return True
     return False
 
