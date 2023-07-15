@@ -12,11 +12,6 @@ import sys
 QUIT_STRINGS = ["q", "quit", "exit"]
 
 
-def quit_program(self):
-    print("Program aborted.")
-    sys.exit()
-
-
 def get_highest_order_rotation(self):
     """
     Prompts the user for the highest order of rotation present
@@ -33,8 +28,31 @@ def get_highest_order_rotation(self):
             print("Invalid input. Please enter None, 2, 3, 4, or 6.")
         
 
-    def is_valid_order_rotation(self):
-        """
-        Tests whether a given input is a valid order of rotation.
-        """
-        pass
+def is_valid_order_rotation(self) -> bool:
+    """
+    Tests whether a given input is a valid order of rotation.
+    """
+    pass
+
+
+def is_reflection_present(self) -> bool:
+    """
+    Prompts the user whether reflection is present in the pattern then
+    returns the corresponding bool.
+    """
+    pass
+
+
+def quit_program(self):
+    print("Program aborted.")
+    sys.exit()
+
+
+def main():
+    """Main program."""
+    highest_order_of_rotation = get_highest_order_of_rotation()
+    reflection_present = is_reflection_present()
+
+
+if __name__ == "__main__":
+    main()
