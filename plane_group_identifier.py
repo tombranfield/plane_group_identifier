@@ -30,11 +30,11 @@ def get_highest_order_rotation():
     """
     prompt_message = "What is the highest order of rotation of the pattern?"
     while True:
-        user_input = input(prompt_message)
-        if user_input in QUIT_STRINGS:
+        user_response = input(prompt_message)
+        if user_response in QUIT_STRINGS:
             quit_program()
         if is_valid_order_rotation(input):
-            return user_input
+            return user_response
         else:
             print("Invalid input. Please enter None, 2, 3, 4, or 6.")
         
@@ -44,7 +44,17 @@ def is_reflection_present(str) -> bool:
     Prompts the user whether reflection is present in the pattern then returns
     the corresponding bool.
     """
-    pass
+    prompt_message = "Is reflection present? (Y/n)"
+    while True:
+        user_response = input(prompt_message).lower()
+        if user_response in QUIT_STRINGS:
+            quit_program()
+        elif user_response in ["y", "yes"]:
+            return True
+        elif user_response in ["n", "no"]:
+            return False
+        else:
+            print("Invalid input.")
 
 
 def quit_program(self):
