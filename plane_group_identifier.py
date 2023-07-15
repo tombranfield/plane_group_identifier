@@ -29,24 +29,12 @@ def get_highest_order_rotation() -> int:
     while True:
         user_response = input(prompt_message)
         check_if_quit_input(user_response)
-        else:
+        if is_input_int(user_response):
+            user_response = int(user_response)
             if is_valid_order_rotation(user_response):
                 return user_response
             else:
                 print("Only values 1, 2, 3, 4, and 6 are allowed.")
-
-
-def check_if_input_is_int(input: str) -> bool:
-    """
-    Checks if a user-given input string is an integer.
-    """
-    try:
-        user_response = int(user_response)
-    except ValueError:
-        print("Invalid input. Please enter an integer.")
-        return False
-    else:
-        return True    
 
 
 def check_if_quit_input(user_response):
@@ -58,7 +46,7 @@ def check_if_quit_input(user_response):
         quit_program()
         
 
-def is_reflection_present(str) -> bool:
+def is_reflection_present() -> bool:
     """
     Prompts the user whether reflection is present in the pattern then returns
     the corresponding bool.
@@ -87,8 +75,8 @@ def quit_program():
 def main():
     """Main program."""
     highest_order_of_rotation = get_highest_order_rotation()
-#    reflection_present = is_reflection_present()
-#    print(highest_order_of_rotation, reflection_present)
+    reflection_present = is_reflection_present()
+    print(highest_order_of_rotation, reflection_present)
 
 
 if __name__ == "__main__":
