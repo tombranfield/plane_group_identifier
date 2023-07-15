@@ -23,7 +23,7 @@ def is_valid_order_rotation(num: int) -> bool:
     return False
 
 
-def get_highest_order_rotation():
+def get_highest_order_rotation() -> int:
     """
     Prompts the user for the highest order of rotation present in the pattern,]
     then returns it.
@@ -58,6 +58,10 @@ def is_reflection_present(str) -> bool:
 
 
 def quit_program(self):
+    """
+    Prints a message that the program is stopping, then stops the
+    program.
+    """
     print("Program aborted.")
     sys.exit()
 
