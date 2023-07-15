@@ -18,8 +18,6 @@ def is_valid_order_rotation(num: int) -> bool:
     """
     Tests whether a given input string is a valid order of rotation.
     """
-    # Note "none" is a user-supplied answer to whether the pattern has
-    # rotational symmetry or not. It is not to do with NoneType.
     if num in [1, 2, 3, 4, 6]:
         return True
     return False
