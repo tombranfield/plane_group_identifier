@@ -1,9 +1,8 @@
 """
-Identifies a plane group of a two-dimensional pattern given
-user-supplied information.
+Identifies a plane group of a two-dimensional pattern given user-supplied
+information.
 
-Usage:
-    ./identifying_plane_groups.py
+Usage: ./identifying_plane_groups.py
 """
 
 import sys
@@ -14,8 +13,7 @@ QUIT_STRINGS = ["q", "quit", "exit"]
 
 def get_highest_order_rotation(self):
     """
-    Prompts the user for the highest order of rotation present
-    in the pattern.
+    Prompts the user for the highest order of rotation present in the pattern.
     """
     prompt_message = "What is the highest order of rotation of the pattern?"
     while True:
@@ -37,8 +35,8 @@ def is_valid_order_rotation(self) -> bool:
 
 def is_reflection_present(self) -> bool:
     """
-    Prompts the user whether reflection is present in the pattern then
-    returns the corresponding bool.
+    Prompts the user whether reflection is present in the pattern then returns
+    the corresponding bool.
     """
     pass
 
