@@ -11,6 +11,17 @@ import sys
 QUIT_STRINGS = ["q", "quit", "exit"]
 
 
+def is_valid_order_rotation(str) -> bool:
+    """
+    Tests whether a given input string is a valid order of rotation.
+    """
+    # Note "none" is a user-supplied answer to whether the pattern has
+    # rotational symmetry or not. It is not to do with NoneType.
+    if str.lower() == in ["none", 1, 2, 3, 4, 6]:
+        return True
+    return False
+
+
 def get_highest_order_rotation():
     """
     Prompts the user for the highest order of rotation present in the pattern,]
@@ -26,13 +37,6 @@ def get_highest_order_rotation():
         else:
             print("Invalid input. Please enter None, 2, 3, 4, or 6.")
         
-
-def is_valid_order_rotation() -> bool:
-    """
-    Tests whether a given input is a valid order of rotation.
-    """
-    pass
-
 
 def is_reflection_present(self) -> bool:
     """
