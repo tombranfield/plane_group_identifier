@@ -11,7 +11,7 @@ import sys
 QUIT_STRINGS = ["q", "quit", "exit"]
 
 
-def get_highest_order_rotation(self):
+def get_highest_order_rotation():
     """
     Prompts the user for the highest order of rotation present in the pattern,]
     then returns it.
@@ -27,7 +27,7 @@ def get_highest_order_rotation(self):
             print("Invalid input. Please enter None, 2, 3, 4, or 6.")
         
 
-def is_valid_order_rotation(self) -> bool:
+def is_valid_order_rotation() -> bool:
     """
     Tests whether a given input is a valid order of rotation.
     """
