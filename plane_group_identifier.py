@@ -5,7 +5,7 @@ user-supplied information.
 Adapted from the flow chart in "The Basics of Crystallography and Diffraction",
 chapter 2.
 
-Usage: ./identifying_plane_groups.py
+Usage: ./plane_group_identifier.py
 """
 
 import sys
