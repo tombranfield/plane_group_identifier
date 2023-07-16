@@ -1,5 +1,5 @@
 """
-A script that identifies the plane group of a two-dimensional pattern given 
+A script that identifies the plane group of a two-dimensional pattern given
 user-supplied information.
 
 Adapted from the flow chart in "The Basics of Crystallography and Diffraction",
@@ -37,8 +37,7 @@ def get_highest_order_rotation() -> int:
         else:
             if is_valid_order_rotation(user_response):
                 return user_response
-            else:
-                print("Only values 1, 2, 3, 4, and 6 are allowed.")
+            print("Only values 1, 2, 3, 4, and 6 are allowed.")
 
 
 def check_if_quit_input(user_response):
@@ -48,11 +47,11 @@ def check_if_quit_input(user_response):
     quit_strings = ["q", "quit", "exit"]
     if user_response in quit_strings:
         quit_program()
-        
+
 
 def yes_or_no_question(question: str) -> bool:
     """
-    Prompts the user with a supplied question whose answer is yes or no, then 
+    Prompts the user with a supplied question whose answer is yes or no, then
     returns True if yes and False if no.
     """
     prompt_message = question
@@ -61,10 +60,9 @@ def yes_or_no_question(question: str) -> bool:
         check_if_quit_input(user_response)
         if user_response in ["y", "yes"]:
             return True
-        elif user_response in ["n", "no"]:
+        if user_response in ["n", "no"]:
             return False
-        else:
-            print("Invalid input.")
+        print("Invalid input.")
 
 
 def is_reflection_present() -> bool:
@@ -73,7 +71,7 @@ def is_reflection_present() -> bool:
     True if present and False if not.
     """
     prompt_message = "Is reflection present? (Y/n) "
-    yes_or_no_question(prompt_message)
+    return yes_or_no_question(prompt_message)
 
 
 def quit_program():
