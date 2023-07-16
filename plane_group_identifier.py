@@ -70,7 +70,7 @@ def yes_or_no_question(question: str) -> bool:
 def is_reflection_present() -> bool:
     """
     Prompts the user whether reflection is present in the pattern then returns
-    the corresponding bool.
+    True if present and False if not.
     """
     prompt_message = "Is reflection present? (Y/n) "
     yes_or_no_question(prompt_message)
