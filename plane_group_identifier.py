@@ -50,12 +50,12 @@ def check_if_quit_input(user_response):
         quit_program()
         
 
-def is_reflection_present() -> bool:
+def yes_or_no_question(question: str) -> bool:
     """
-    Prompts the user whether reflection is present in the pattern then returns
-    the corresponding bool.
+    Prompts the user with a supplied question whose answer is yes or no, then 
+    returns True if yes and False if no.
     """
-    prompt_message = "Is reflection present? (Y/n) "
+    prompt_message = question
     while True:
         user_response = input(prompt_message).lower()
         check_if_quit_input(user_response)
@@ -65,6 +65,15 @@ def is_reflection_present() -> bool:
             return False
         else:
             print("Invalid input.")
+
+
+def is_reflection_present() -> bool:
+    """
+    Prompts the user whether reflection is present in the pattern then returns
+    the corresponding bool.
+    """
+    prompt_message = "Is reflection present? (Y/n) "
+    yes_or_no_question(prompt_message)
 
 
 def quit_program():
