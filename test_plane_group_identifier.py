@@ -6,6 +6,16 @@ from plane_group_identifier import *
 import pytest
 
 
+# This will hold a dictionary with key-value pairs corresponding
+# to the input and the output plane groups
+@pytest.fixture
+def correct_results():
+    return {}
+
+
+
+
+
 @pytest.mark.parametrize("correct_input", [1, 2, 3, 4, 6])
 def test_is_valid_order_rotation_true(correct_input):
     assert is_valid_order_rotation(correct_input) == True
