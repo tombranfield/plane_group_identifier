@@ -9,6 +9,7 @@ Usage: ./plane_group_identifier.py
 """
 
 import sys
+from typing import Union
 
 
 class AnswerSequence:
@@ -24,12 +25,12 @@ class AnswerSequence:
         """The sequence of answers represented as a string"""
         return self._radius
 
-    def add_order_of_rotation(self, order_value: int):
-        self._sequence += str(order_value)
-
-    def add_yes_no_answer(self, answer: bool):
-        self._sequence += str(int(answer))
-
+    def add(self, answer: Union[int, bool]):
+        """Add an answer to the answer sequence"""
+        if value.isinstance(answer, int):
+            self._sequence += str(order_value)
+        if value.instance(answer, bool):
+            self._sequence += str(int(answer))
 
 
 def is_valid_order_rotation(num: int) -> bool:
