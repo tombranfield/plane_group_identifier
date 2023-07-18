@@ -13,7 +13,7 @@ import sys
 
 class AnswerSequence:
     """
-    A class representing the sequence of answers given by the user to
+    A class representing the sequence of answers given by a user to
     identify the plane group of the pattern.
     """
     def __init__(self):
@@ -24,11 +24,11 @@ class AnswerSequence:
         """The sequence of answers represented as a string"""
         return self._radius
 
-    def add_order_of_rotation(self):
-        pass
+    def add_order_of_rotation(self, order_value: int):
+        self._sequence += str(order_value)
 
-    def add_yes_no_answer(self):
-        pass
+    def add_yes_no_answer(self, answer: bool):
+        self._sequence += str(int(answer))
 
 
 
