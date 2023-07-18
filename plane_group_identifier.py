@@ -13,12 +13,12 @@ from typing import Union
 
 
 PLANE_GROUP_SEQUENCE = {
-    "1YY":  "cm",    
+    "1YY":  "cm",
     "1YN":  "pm",
     "1NY":  "pg",
     "1NN":  "p1",
     "2YYY": "p2mm",
-    "2YYN": "c2mm", 
+    "2YYN": "c2mm",
     "2YN":  "p2mg",
     "2NY":  "p2gg",
     "2NN":  "p2",
@@ -160,9 +160,6 @@ def main():
 
     reflection_present = is_reflection_present()
     answer_sequence.add(reflection_present)
-
-
-
 
 
 if __name__ == "__main__":

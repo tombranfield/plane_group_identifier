@@ -50,3 +50,11 @@ def test_check_if_quit_input(monkeypatch, quit_input):
     with pytest.raises(SystemExit):
         check_if_quit_input(quit_input)
 
+
+#TODO
+# Check AnswerSequence class works
+# Check you can add to the sequence successfully
+# using int and bool
+# Check using another type raises an exception
+# Check it starts with an empty string
+# Write a fixture to create a new answer sequence for each test
