@@ -45,8 +45,13 @@ def check_if_quit_input(user_response):
     Checks if the user wants to quit, and stops the program if they do.
     """
     quit_strings = ["q", "quit", "exit"]
-    if user_response in quit_strings:
-        quit_program()
+    try:
+        user_response = user_response.lower()
+    except AttributeError:
+        pass
+    else:
+        if user_response in quit_strings:
+            quit_program()
 
 
 def yes_or_no_question(question: str) -> bool:
