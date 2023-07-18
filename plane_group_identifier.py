@@ -155,11 +155,8 @@ def main():
     """Main program."""
     answer_sequence = AnswerSequence()
 
-    highest_order_of_rotation = get_highest_order_rotation()
-    answer_sequence.add(highest_order_of_rotation)
-
-    reflection_present = is_reflection_present()
-    answer_sequence.add(reflection_present)
+    answer_sequence.add(get_highest_order_rotation())
+    answer_sequence.add(is_reflection_present())
 
 
 if __name__ == "__main__":

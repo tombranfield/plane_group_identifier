@@ -8,9 +8,9 @@ import pytest
 
 # Note these are copied as-is to the tests (not copied), so do not
 # have code that mutates them as further tests will be affected.
-YES_STRINGS = ["y", "yes", "Y", "YES"]
-NO_STRINGS = ["n", "no", "N", "NO"]
-QUIT_STRINGS = ["q", "quit", "exit", "Q", "QUIT", "EXIT"]
+YES_TEST_STRINGS = ["y", "yes", "Y", "YES"]
+NO_TEST_STRINGS = ["n", "no", "N", "NO"]
+QUIT_TEST_STRINGS = ["q", "quit", "exit", "Q", "QUIT", "EXIT"]
 
 
 @pytest.mark.parametrize("correct_input", VALID_ORDERS_OF_ROTATION)
@@ -30,21 +30,21 @@ def test_get_highest_order_rotation(monkeypatch, valid_order):
     assert user_response == valid_order
 
 
-@pytest.mark.parametrize("yes_input", YES_STRINGS)
+@pytest.mark.parametrize("yes_input", YES_TEST_STRINGS)
 def test_yes_or_no_question_true(monkeypatch, yes_input):
     monkeypatch.setattr("builtins.input", lambda _: yes_input)
     user_response = yes_or_no_question("Hi?")
     assert user_response == True
 
 
-@pytest.mark.parametrize("no_input", NO_STRINGS)
+@pytest.mark.parametrize("no_input", NO_TEST_STRINGS)
 def test_yes_or_no_question_false(monkeypatch, no_input):
     monkeypatch.setattr("builtins.input", lambda _: no_input)
     user_response = yes_or_no_question("Hi?")
     assert user_response == False
 
 
-@pytest.mark.parametrize("quit_input", QUIT_STRINGS)
+@pytest.mark.parametrize("quit_input", QUIT_TEST_STRINGS)
 def test_check_if_quit_input(monkeypatch, quit_input):
     monkeypatch.setattr("builtins.input", lambda _: quit_input)
     with pytest.raises(SystemExit):
