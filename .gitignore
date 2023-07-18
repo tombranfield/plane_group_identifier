@@ -162,3 +162,5 @@ cython_debug/
 # To Do files
 todo.txt
 TODO.txt
+todo/
+TODO/
