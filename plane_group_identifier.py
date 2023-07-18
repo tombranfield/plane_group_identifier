@@ -12,6 +12,13 @@ import sys
 from typing import Union
 
 
+# TODO
+PLANE_GROUP_SEQUENCE = {
+    
+}
+
+
+
 class AnswerSequence:
     """
     A class representing the sequence of answers given by a user to
@@ -21,16 +28,19 @@ class AnswerSequence:
         self._sequence = ""
 
     @property
-    def sequence(self):
+    def sequence(self) -> str:
         """The sequence of answers represented as a string"""
         return self._sequence
 
     def add(self, answer: Union[int, bool]):
         """Adds the supplied answer to the answer sequence"""
         if isinstance(answer, bool):
-            self._sequence += str(int(answer))
+            return_char = "Y" if answer else "N"
+            self._sequence += return_char
         elif isinstance(answer, int):
             self._sequence += str(answer)
+        else:
+            raise TypeError("Unsupported type for this operation")
 
 
 def is_valid_order_rotation(num: int) -> bool:
@@ -121,7 +131,6 @@ def main():
     answer_sequence.add(highest_order_of_rotation)
 
     reflection_present = is_reflection_present()
-
     answer_sequence.add(reflection_present)
 
     print(answer_sequence.sequence)
