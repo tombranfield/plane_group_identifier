@@ -3,7 +3,7 @@ A script that identifies the plane group of a two-dimensional pattern given
 user-supplied information.
 
 Adapted from the flow chart in "The Basics of Crystallography and Diffraction",
-chapter 2.
+chapter 2, pg. 69, Third Edition, 2009.
 
 Usage: ./plane_group_identifier.py
 """
@@ -18,19 +18,19 @@ class AnswerSequence:
     identify the plane group of the pattern.
     """
     def __init__(self):
-        self._sequence = sequence
+        self._sequence = ""
 
     @property
     def sequence(self):
         """The sequence of answers represented as a string"""
-        return self._radius
+        return self._sequence
 
     def add(self, answer: Union[int, bool]):
-        """Add an answer to the answer sequence"""
-        if value.isinstance(answer, int):
-            self._sequence += str(order_value)
-        if value.instance(answer, bool):
+        """Adds the supplied answer to the answer sequence"""
+        if isinstance(answer, bool):
             self._sequence += str(int(answer))
+        elif isinstance(answer, int):
+            self._sequence += str(answer)
 
 
 def is_valid_order_rotation(num: int) -> bool:
@@ -113,21 +113,18 @@ def quit_program():
     sys.exit()
 
 
-def convert_bool_to_str_1_or_0(in_bool) -> str:
-
-
-
 def main():
     """Main program."""
     answer_sequence = AnswerSequence()
 
     highest_order_of_rotation = get_highest_order_rotation()
-    answer_sequence.add_order_of_rotation(highest_order_of_rotation)
+    answer_sequence.add(highest_order_of_rotation)
 
     reflection_present = is_reflection_present()
-    answer_sequence += add_bool_answer_to_sequence(reflection_present)
 
-    print(answer_sequence)
+    answer_sequence.add(reflection_present)
+
+    print(answer_sequence.sequence)
 
 
 if __name__ == "__main__":
