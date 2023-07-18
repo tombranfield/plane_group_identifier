@@ -12,9 +12,21 @@ import sys
 from typing import Union
 
 
-# TODO
+
 PLANE_GROUP_SEQUENCE = {
-    
+    "1YY": "cm",    "1YN": "pm",    "1NY": "pg",    "1NN": "p1",
+        
+}
+
+
+SEQUENCE_QUESTIONS = {
+    "1Y": "Is there glide-reflection in an axis which is not a reflection axis?",
+    "1N": "Is glide-reflection present?",
+    "2Y": "Do reflections occur in two directions?",
+    "2YY": "Are all centres of rotation on reflection axes?",
+    "2N": "Is glide-reflection present?",
+    "3Y": "Are all centres of rotation on reflection axes?",
+    "4Y": "Do reflections occur in axes which intersect at 45\u00B0?",
 }
 
 
