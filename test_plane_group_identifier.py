@@ -32,4 +32,11 @@ def test_yes_or_no_question_true(monkeypatch, yes_input):
     assert user_response == True
 
 
+@pytest.mark.parametrize("no_input", ["n", "no", "N", "NO"])
+def test_yes_or_no_question_false(monkeypatch, no_input):
+    monkeypatch.setattr("builtins.input", lambda _: no_input)
+    user_response = yes_or_no_question("Hi?")
+    assert user_response == False
+
+
 # def test_check_if_quit_input()
