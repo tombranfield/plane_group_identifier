@@ -44,6 +44,9 @@ def check_if_quit_input(user_response):
     """
     Checks if the user wants to quit, and stops the program if they do.
     """
+    # Potential entangement if we decide to change these
+    # As will affects test suite (need to change in multiple places
+    # Put constants at top?
     quit_strings = ["q", "quit", "exit"]
     try:
         user_response = user_response.lower()
