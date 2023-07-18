@@ -23,4 +23,3 @@ def test_get_highest_order_rotation(monkeypatch, valid_order):
     assert user_response == valid_order
 
 
-
