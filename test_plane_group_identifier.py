@@ -8,7 +8,6 @@ import pytest
 
 # Note these are copied as-is to the tests (not copied), so do not
 # have code that mutates them as further tests will be affected.
-VALID_ORDERS_OF_ROTATION = [1, 2, 3, 4, 6]
 YES_STRINGS = ["y", "yes", "Y", "YES"]
 NO_STRINGS = ["n", "no", "N", "NO"]
 QUIT_STRINGS = ["q", "quit", "exit", "Q", "QUIT", "EXIT"]

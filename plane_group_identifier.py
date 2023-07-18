@@ -44,6 +44,9 @@ SEQUENCE_QUESTIONS = {
 }
 
 
+VALID_ORDERS_OF_ROTATION = [1, 2, 3, 4, 6]
+
+
 class AnswerSequence:
     """
     A class representing the sequence of answers given by a user to
@@ -73,7 +76,7 @@ def is_valid_order_rotation(num: int) -> bool:
     Tests whether a given input string is a valid order of rotation.
     """
     # Note this holds for plane groups. Quasicrystals not considered.
-    if num in [1, 2, 3, 4, 6]:
+    if num in VALID_ORDERS_OF_ROTATION:
         return True
     return False
 
@@ -158,7 +161,8 @@ def main():
     reflection_present = is_reflection_present()
     answer_sequence.add(reflection_present)
 
-    print(answer_sequence.sequence)
+
+
 
 
 if __name__ == "__main__":
