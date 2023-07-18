@@ -11,6 +11,27 @@ Usage: ./plane_group_identifier.py
 import sys
 
 
+class AnswerSequence:
+    """
+    A class representing the sequence of answers given by the user to
+    identify the plane group of the pattern.
+    """
+    def __init__(self):
+        self._sequence = sequence
+
+    @property
+    def sequence(self):
+        """The sequence of answers represented as a string"""
+        return self._radius
+
+    def add_order_of_rotation(self):
+        pass
+
+    def add_yes_no_answer(self):
+        pass
+
+
+
 def is_valid_order_rotation(num: int) -> bool:
     """
     Tests whether a given input string is a valid order of rotation.
@@ -91,11 +112,21 @@ def quit_program():
     sys.exit()
 
 
+def convert_bool_to_str_1_or_0(in_bool) -> str:
+
+
+
 def main():
     """Main program."""
+    answer_sequence = AnswerSequence()
+
     highest_order_of_rotation = get_highest_order_rotation()
+    answer_sequence.add_order_of_rotation(highest_order_of_rotation)
+
     reflection_present = is_reflection_present()
-    print(highest_order_of_rotation, reflection_present)
+    answer_sequence += add_bool_answer_to_sequence(reflection_present)
+
+    print(answer_sequence)
 
 
 if __name__ == "__main__":
