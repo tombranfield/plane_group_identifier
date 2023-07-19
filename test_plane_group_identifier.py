@@ -51,25 +51,30 @@ def test_check_if_quit_input(monkeypatch, quit_input):
         check_if_quit_input(quit_input)
 
 
-#TODO
-# Check AnswerSequence class works
-# Check you can add to the sequence successfully
-# using int and bool
-# Check using another type raises an exception
-# Check it starts with an empty string
-# Write a fixture to create a new answer sequence for each test
-
-
 @pytest.mark.parametrize("valid_int", VALID_ORDERS_OF_ROTATION)
 def test_answer_sequence_add_valid_int(valid_int):
     answer_sequence = AnswerSequence()
     answer_sequence.add(valid_int)
     assert answer_sequence.sequence == str(valid_int)
 
-"""
+
 @pytest.mark.parametrize("invalid_int", [-5, -1, 0, 5, 10])
 def test_answer_sequence_add_invalid_int(invalid_int):
     answer_sequence = AnswerSequence()
     with pytest.raises(ValueError):
         answer_sequence.add(invalid_int)
-"""
+
+
+def test_answer_sequence_add_bool_true():
+    answer_sequence = AnswerSequence()
+    answer_sequence.add(True)
+    assert answer_sequence.sequence == "Y"
+
+
+def test_answer_sequence_add_bool_false():
+    answer_sequence = AnswerSequence()
+    answer_sequence.add(False)
+    assert answer_sequence.sequence == "N"
+
+
+
