@@ -66,7 +66,9 @@ class AnswerSequence:
             return_char = "Y" if answer else "N"
             self._sequence += return_char
         elif isinstance(answer, int):
-            self._sequence += str(answer)
+            if int in VALID_ORDERS_OF_ROTATION:
+                self._sequence += str(answer)
+            raise ValueError("Incorrect order of rotation entered.")
         else:
             raise TypeError("Unsupported type for this operation")
 
