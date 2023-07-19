@@ -45,6 +45,7 @@ SEQUENCE_QUESTIONS = {
 
 
 VALID_ORDERS_OF_ROTATION = [1, 2, 3, 4, 6]
+QUIT_STRINGS = ["q", "quit", "exit"]
 
 
 class AnswerSequence:
@@ -107,16 +108,12 @@ def check_if_quit_input(user_response):
     """
     Checks if the user wants to quit, and stops the program if they do.
     """
-    # Potential entangement if we decide to change these
-    # As will affects test suite (need to change in multiple places
-    # Put constants at top?
-    quit_strings = ["q", "quit", "exit"]
     try:
         user_response = user_response.lower()
     except AttributeError:
         pass
     else:
-        if user_response in quit_strings:
+        if user_response in QUIT_STRINGS:
             quit_program()
 
 
