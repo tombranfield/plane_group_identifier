@@ -57,7 +57,7 @@ class AnswerSequence:
         self._sequence = ""
 
     @property
-    def sequence(self) -> str:
+    def string(self) -> str:
         """The sequence of answers represented as a string"""
         return self._sequence
 
@@ -158,14 +158,12 @@ def main():
     answer_sequence.add(get_highest_order_rotation())
     answer_sequence.add(is_reflection_present())
 
-    # TODO both current_sequence and answer_sequence confusing
     while True:
-        current_sequence = answer_sequence.sequence
-        if current_sequence in PLANE_GROUP_SEQUENCES:
-            print(PLANE_GROUP_SEQUENCES[current_sequence])
+        if answer_sequence.string in PLANE_GROUP_SEQUENCES:
+            print(PLANE_GROUP_SEQUENCES[answer_sequence.string])
             break
         else:
-            next_question = SEQUENCE_QUESTIONS[current_sequence]
+            next_question = SEQUENCE_QUESTIONS[answer_sequence.string]
             answer = yes_or_no_question(next_question)
             answer_sequence.add(answer)
 
