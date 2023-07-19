@@ -4,8 +4,6 @@ user-supplied information.
 
 Adapted from the flow chart in "The Basics of Crystallography and Diffraction",
 chapter 2, pg. 69, Third Edition, 2009.
-
-Usage: ./plane_group_identifier.py
 """
 
 import sys
@@ -79,7 +77,6 @@ def is_valid_order_rotation(num: int) -> bool:
     """
     Tests whether a given input string is a valid order of rotation.
     """
-    # Note this holds for plane groups. Quasicrystals not considered.
     if num in VALID_ORDERS_OF_ROTATION:
         return True
     return False
@@ -162,10 +159,9 @@ def main():
         if answer_sequence.string in PLANE_GROUP_SEQUENCES:
             print(PLANE_GROUP_SEQUENCES[answer_sequence.string])
             break
-        else:
-            next_question = SEQUENCE_QUESTIONS[answer_sequence.string]
-            answer = yes_or_no_question(next_question)
-            answer_sequence.add(answer)
+        next_question = SEQUENCE_QUESTIONS[answer_sequence.string]
+        answer = yes_or_no_question(next_question)
+        answer_sequence.add(answer)
 
 
 if __name__ == "__main__":
