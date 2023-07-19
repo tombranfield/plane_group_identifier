@@ -12,7 +12,7 @@ import sys
 from typing import Union
 
 
-PLANE_GROUP_SEQUENCE = {
+PLANE_GROUP_SEQUENCES = {
     "1YY":  "cm",
     "1YN":  "pm",
     "1NY":  "pg",
@@ -161,8 +161,16 @@ def main():
     answer_sequence.add(get_highest_order_rotation())
     answer_sequence.add(is_reflection_present())
 
-    sequence = answer_sequence.sequence
-    print(sequence)
+    # TODO both current_sequence and answer_sequence confusing
+    while True:
+        current_sequence = answer_sequence.sequence
+        if current_sequence in PLANE_GROUP_SEQUENCES:
+            print(PLANE_GROUP_SEQUENCES[current_sequence])
+            break
+        else:
+            next_question = SEQUENCE_QUESTIONS[current_sequence]
+            answer = yes_or_no_question(next_question)
+            answer_sequence.add(answer)
 
 
 if __name__ == "__main__":
