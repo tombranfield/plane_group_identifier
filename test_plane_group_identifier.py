@@ -58,3 +58,19 @@ def test_check_if_quit_input(monkeypatch, quit_input):
 # Check using another type raises an exception
 # Check it starts with an empty string
 # Write a fixture to create a new answer sequence for each test
+
+
+@pytest.mark.parametrize("valid_int", VALID_ORDERS_OF_ROTATION)
+def test_answer_sequence_add_valid_int(valid_int):
+    answer_sequence = AnswerSequence()
+    answer_sequence.add(valid_int)
+    print(answer_sequence.sequence)
+    assert answer_sequence.sequence == str(valid_int)
+
+
+"""
+@pytest.mark.parametrize("invalid_int", [-5, -1, 0, 5, 10])
+def test_answer_sequence_add_invalid_int():
+    pass #TODO
+"""
+

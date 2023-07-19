@@ -158,6 +158,9 @@ def main():
     answer_sequence.add(get_highest_order_rotation())
     answer_sequence.add(is_reflection_present())
 
+    sequence = answer_sequence.sequence
+    print(sequence)
+
 
 if __name__ == "__main__":
     main()
