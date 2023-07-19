@@ -89,7 +89,7 @@ def get_highest_order_rotation() -> int:
     Prompts the user for the highest order of rotation present in the pattern,
     then returns it.
     """
-    prompt_message = "What is the highest order of rotation of the pattern? "
+    prompt_message = "What's the highest order of rotation? "
     while True:
         user_response = input(prompt_message)
         check_if_quit_input(user_response)
@@ -125,7 +125,7 @@ def yes_or_no_question(question: str) -> bool:
     Prompts the user with a supplied question whose answer is yes or no, then
     returns True if yes and False if no.
     """
-    prompt_message = question
+    prompt_message = question + " "
     while True:
         user_response = input(prompt_message).lower()
         check_if_quit_input(user_response)
@@ -141,7 +141,7 @@ def is_reflection_present() -> bool:
     Prompts the user whether reflection is present in the pattern then returns
     True if present and False if not.
     """
-    prompt_message = "Is reflection present? (Y/n) "
+    prompt_message = "Is reflection present? (Y/n)"
     return yes_or_no_question(prompt_message)
 
 
