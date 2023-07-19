@@ -53,7 +53,7 @@ def test_check_if_quit_input(monkeypatch, quit_input):
 def test_answer_sequence_add_valid_int(valid_int):
     answer_sequence = AnswerSequence()
     answer_sequence.add(valid_int)
-    assert answer_sequence.sequence == str(valid_int)
+    assert answer_sequence.string == str(valid_int)
 
 
 @pytest.mark.parametrize("invalid_int", [-5, -1, 0, 5, 10])
@@ -66,13 +66,13 @@ def test_answer_sequence_add_invalid_int(invalid_int):
 def test_answer_sequence_add_bool_true():
     answer_sequence = AnswerSequence()
     answer_sequence.add(True)
-    assert answer_sequence.sequence == "Y"
+    assert answer_sequence.string == "Y"
 
 
 def test_answer_sequence_add_bool_false():
     answer_sequence = AnswerSequence()
     answer_sequence.add(False)
-    assert answer_sequence.sequence == "N"
+    assert answer_sequence.string == "N"
 
 
 def test_answer_sequence_add_in_succession():
@@ -80,6 +80,6 @@ def test_answer_sequence_add_in_succession():
     answer_sequence.add(4)
     answer_sequence.add(False)
     answer_sequence.add(True)
-    assert answer_sequence.sequence == "4NY"
+    assert answer_sequence.string == "4NY"
 
 
