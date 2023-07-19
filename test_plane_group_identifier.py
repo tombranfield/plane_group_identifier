@@ -64,13 +64,11 @@ def test_check_if_quit_input(monkeypatch, quit_input):
 def test_answer_sequence_add_valid_int(valid_int):
     answer_sequence = AnswerSequence()
     answer_sequence.add(valid_int)
-    print(answer_sequence.sequence)
     assert answer_sequence.sequence == str(valid_int)
 
 
-"""
 @pytest.mark.parametrize("invalid_int", [-5, -1, 0, 5, 10])
 def test_answer_sequence_add_invalid_int():
-    pass #TODO
-"""
-
+    answer_sequence = AnswerSequence()
+    with pytest.raises(ValueError):
+        answer_sequence.add(invalid_int)
