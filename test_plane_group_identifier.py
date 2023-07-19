@@ -6,8 +6,6 @@ from plane_group_identifier import *
 import pytest
 
 
-# Note these are copied as-is to the tests (not copied), so do not
-# have code that mutates them as further tests will be affected.
 YES_TEST_STRINGS = ["y", "yes", "Y", "YES"]
 NO_TEST_STRINGS = ["n", "no", "N", "NO"]
 QUIT_TEST_STRINGS = ["q", "quit", "exit", "Q", "QUIT", "EXIT"]
@@ -76,5 +74,12 @@ def test_answer_sequence_add_bool_false():
     answer_sequence.add(False)
     assert answer_sequence.sequence == "N"
 
+
+def test_answer_sequence_add_in_succession():
+    answer_sequence = AnswerSequence()
+    answer_sequence.add(4)
+    answer_sequence.add(False)
+    answer_sequence.add(True)
+    assert answer_sequence.sequence == "4NY"
 
 
